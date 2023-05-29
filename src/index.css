@@ -1,0 +1,185 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* Colors */
+  --clr-dark: 11 13 23;
+  --clr-light: 208 214 249;
+  --clr-white: 255 255 255;
+
+  /* Font Size */
+  --fz-900: 9.375rem;
+  --fz-800: 6.25rem;
+  --fz-700: 3.5rem;
+  --fz-600: 2rem;
+  --fz-500: 1.75rem;
+  --fz-400: 1.125rem;
+  --fz-300: 1rem;
+  --fz-200: 0.875rem;
+
+  /* Font Family */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box-sizing */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Reset Margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+dd,
+dl,
+figure,
+picture {
+  margin: 0;
+}
+
+/* set up the body */
+body {
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fz-400);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  /* margin-inline: auto; */
+  max-width: 80rem;
+}
+
+section.page {
+  min-height: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Colors */
+
+.bg-dark {background-color: rgb(var(--clr-dark));}
+.bg-accent {background-color: rgb(var(--clr-light));}
+.bg-white {background-color: rgb(var(--clr-white));}
+
+.text-dark {color: rgb(var(--clr-dark));}
+.text-accent {color: rgb(var(--clr-light));}
+.text-white {color: rgb(var(--clr-white));}
+
+/* typography */
+
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.line-height { line-height: 2rem; } 
+.line-height-2 { line-height: 1.6rem; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fw-normal { font-weight: normal; }
+.fw-bold { font-weight: bold; }
+
+.fs-900 { font-size: var(--fz-900); }
+.fs-800 { font-size: var(--fz-800); }
+.fs-700 { font-size: var(--fz-700); }
+.fs-600 { font-size: var(--fz-600); }
+.fs-500 { font-size: var(--fz-500); }
+.fs-400 { font-size: var(--fz-400); }
+.fs-300 { font-size: var(--fz-300); }
+.fs-200 { font-size: var(--fz-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+/* ------------------- */
+/* Custom scrollbar    */
+/* ------------------- */
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--clr-dark));
+}
+
+::-webkit-scrollbar-thumb {
+  border: .1rem solid rgb(var(--clr-dark));
+  background: rgb(var(--clr-white) / .3);
+  border-radius: 9999px;
+}
